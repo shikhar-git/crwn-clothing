@@ -10,13 +10,7 @@ import { createUserProfileDocument } from "./firebase/firebase.util";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.action";
 
-const HatsPage = () => {
-  return (
-    <div>
-      <h1>hats wuhu</h1>
-    </div>
-  );
-};
+
 class App extends React.Component {
   unsubscribeFromAuth = null;
   componentDidMount() {
@@ -51,8 +45,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(null, mapStateToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
